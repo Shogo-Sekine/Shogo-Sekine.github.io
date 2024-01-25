@@ -19,9 +19,11 @@ jobs:
       - name: Build
         run: yarn build
       
-      - name: APPADS
+      - name: MKDIR-DIST
         run:  mkdir -p ./dist
-              mv app-ads.txt ./dist
+              
+      - name: MOVE-APPADS
+        run:  mv app-ads.txt ./dist
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
